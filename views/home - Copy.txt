@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Shortener</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body>
+    <!-- Signin & sign up -->
+    <!-- <div class="popup1">
+        <div class="popup-content">
+            <form action="" method="POST">
+                <img id="user-img" src="user-image.png" alt="USER-IMAGE">
+                <img id="close-img" src="close.png" alt="CLOSE-IMAGE">
+                <h3>Signup Form</h3>
+                <input type="text" placeholder="Enter Your Name" required spellcheck="true">
+                <input type="email" placeholder="Enter Your Email" required>
+                <input type="text" placeholder="Enter Your Password" required>
+                <button type="submit">Signup Now</button>
+            </form>
+
+        </div>
+    </div> -->
+    <!-- <div class="popup2">
+        <div class="popup-content">
+            <form action="" method="POST">
+                <img id="user-img" src="user-image.png" alt="USER-IMAGE">
+                <img id="close-img" src="close.png" alt="CLOSE-IMAGE">
+                <h3>Signup Form</h3>
+                <input type="text" placeholder="Enter Your Name">
+                <input type="email" placeholder="Enter Your Email">
+                <input type="text" placeholder="Enter Your Password">
+                <button type="submit">Signup Now</button>
+            </form>
+
+        </div>
+    </div> -->
+    <!-- Navbar -->
+
+    <div class="navbar">
+      <div class="left">
+        <p class="typewriter" style="font-weight: bolder">Short URL Maker</p>
+      </div>
+      <div class="right">
+        <a href="#">About</a>
+        <a id="signup" href="#">Signup</a>
+        <a id="signin" href="#">Signin</a>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="maincontainer">
+      <h1>URL Shortener</h1>
+
+      <form action="/url" method="POST">
+        <label>Enter or Paste Your long URL:</label>
+        <input
+          type="text"
+          name="url"
+          id="long-url"
+          placeholder="https://example.com"
+          required
+        />
+        <button type="submit" id="shorten-btn">Shorten</button>
+      </form>
+
+      <!-- Print the Short URL -->
+      <% if (locals.id) { %>
+      <div id="short-url-container">
+        
+        <p>Here's your shortened URL: <a target="_blank" href="http://localhost:8002/<%= id %>">http://localhost:8002/<%= id %></a> </p>
+        <div id="short-url">
+          <button type="button" id="copy-btn">Copy</button>
+        </div>
+      </div>
+      <% } %>
+
+
+    </div>
+    <footer>
+      <div class="footer-links">
+        <p>
+          Minimize your long and complex URLs into feature-rich, simple, and
+          trackable short links.
+        </p>
+        <p>Developed By @ <a href="">Akash Chandra Sahu</a></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<!-- Minimize your long and complex URLs into feature-rich, simple, and trackable short links." -->

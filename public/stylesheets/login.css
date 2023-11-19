@@ -1,0 +1,44 @@
+.popup1, .popup2 {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.popup-content{
+    height: 400px;
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.popup-content form input{
+    margin: 20px auto;
+    display:block; /*to list all input col wise*/
+    width: 50%;
+    padding: 10px;
+    border: 1px solid rgb(136, 65, 65);
+}
+.popup-content button{
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 8px;
+}
+.popup-content button:hover{
+    background-color:rgb(29, 88, 142);
+    color: #fff;
+}
+#close-img1, #close-img2{
+    position: absolute;
+    top:5px;
+    right:5px;
+
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;  
+}

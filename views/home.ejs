@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Shortener</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <style>
+      .show-popup {
+          display: flex;
+          backdrop-filter: blur(20px);
+      }
+
+      .hide-popup {
+          display: none;
+      }
+  </style>
+    
+  </head>
+
+  <body>
+    <!-- Signin Signup popup -->
+    <div class="popup-container">
+      <div class="popup1" style="display: none">
+        <div class="popup-content">
+          <form action="/user/signup" method="POST">
+            <img id="user-img" src="/images/user-image.png" alt="USER-IMAGE" />
+            <img id="close-img1" src="/images/close.png" alt="CLOSE-IMAGE" />
+            <h3>Signup Form</h3>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              required
+              spellcheck="true"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <input
+              type="text"
+              name="password"
+              placeholder="Enter Your Password"
+              required
+            />
+            <button type="submit">Signup Now</button>
+          </form>
+        </div>
+      </div>
+      
+      
+      <div class="popup2" class="<%= locals.showSignedinPopup ? 'show-popup' : 'hide-popup' %>" style="display: none;" >
+        <div class="popup-content">
+          <form action="/user/signin" method="POST">
+            <img id="user-img" src="/images/user-image.png" alt="USER-IMAGE" />
+            <img id="close-img2" src="/images/close.png" alt="CLOSE-IMAGE" />
+            <h3>SignIn Form</h3>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <input
+              type="text"
+              name="password"
+              placeholder="Enter Your Password"
+              required
+            />
+            <button type="submit">SignIn Now</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+      <div class="left">
+        <p class="typewriter" style="font-weight: bolder">Short URL Maker</p>
+      </div>
+
+      <% if (locals.loggedinHomePage) { %>
+        <div class="right">
+          <a>Welcome <%= uName %></a>
+          <a href="/user/logout">Logout</a>
+        </div>
+      <% } else { %>
+        <div class="right">
+          <a href="#">About</a>
+          <a id="signup" href="#">Signup</a>
+          <a id="signin" href="#">Signin</a>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Main Container -->
+    <div class="maincontainer">
+      <h1>URL Shortener</h1>
+
+      <form action="/url" method="POST">
+        <label>Enter or Paste Your long URL:</label>
+        <input
+          type="text"
+          name="url"
+          id="long-url"
+          placeholder="https://example.com"
+          required
+        />
+        <button type="submit" id="shorten-btn">Shorten</button>
+      </form>
+
+      <!-- Print the Short URL -->
+      <% if (locals.id) { %>
+      <div id="short-url-container">
+        <p>
+          Here's your shortened URL:
+          <a
+            id="target-url"
+            target="_blank"
+            href="http://localhost:8002/<%= id %>"
+            >http://localhost:8002/<%= id %></a
+          >
+        </p>
+        <div id="short-url">
+          <button type="button" id="copy-btn">Copy</button>
+        </div>
+      </div>
+      <% } %>
+    </div>
+<!-- Short URLs Trackers For Login User Only-->
+    <div>
+
+      <div class="tracker">
+        <!-- <button id="urlTrack">URL Tracker</button> -->
+        <!-- <button id="analytics">Analytics</button> -->
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <p>
+          Minimize your long and complex URLs into feature-rich, simple, and
+          trackable short links.
+        </p>
+        <p>Developed By @ <a href="">Akash Chandra Sahu</a></p>
+      </div>
+    </footer>
+
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>
+<!-- Minimize your long and complex URLs into feature-rich, simple, and trackable short links." -->

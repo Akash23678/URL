@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+.content-box {
+    background-color: black; /* Keep the background color of the content box black */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#status-code {
+    font-size: 5em; /* Set the font size for the status code */
+    color: white; /* Set the text color to white */
+}
+
+#error-msg,
+#redirect {
+    font-size: 20px;
+    color: white; /* Set the text color to white for other elements */
+    /* Add any additional styling for the error message or redirect link */
+}
+a{
+    color:yellow;
+}
