@@ -50,6 +50,31 @@ const handleGetUser = async (req, res)=>{
 }
 
 
+
+// Get Signup Page
+const handleGetSignupPage = (req, res)=>{
+    try{
+        console.log("Successfully render signup page");
+        return res.render("signup")
+    }catch(err){
+        console.log("Unable to render Signup Page")
+        return res.render("error", {error: "Internal Server Error", status:500})
+    }
+} 
+
+//Get Signin Page
+const handleGetSigninPage = (req, res)=>{
+    try{
+        console.log("Successfully render signin page");
+        return res.render("signin");
+    }catch(err){
+        console.log("Unable to render Signin Page")
+        return res.render("error", {error: "Internal Server Error", status:500})
+    }
+} 
+
+
+
 //Logout
 const logoutUser = (req, res)=>{
     req.session.user =  null;
@@ -62,5 +87,7 @@ const logoutUser = (req, res)=>{
 module.exports = {
     handleCreateUser,
     handleGetUser,
+    handleGetSignupPage,
+    handleGetSigninPage,
     logoutUser
 }

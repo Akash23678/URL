@@ -12,7 +12,7 @@
     />
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/login.css" />
+    
     <style>
       .show-popup {
           display: flex;
@@ -28,7 +28,7 @@
 
   <body>
     <!-- Signin Signup popup -->
-    <div class="popup-container">
+    <!-- <div class="popup-container">
       <div class="popup1" style="display: none">
         <div class="popup-content">
           <form action="/user/signup" method="POST">
@@ -60,7 +60,7 @@
       </div>
       
       
-      <div class="popup2" class="<%= locals.showSignedinPopup ? 'show-popup' : 'hide-popup' %>" style="display: none;" >
+      <div class="popup2"  style="display: none;" >
         <div class="popup-content">
           <form action="/user/signin" method="POST">
             <img id="user-img" src="/images/user-image.png" alt="USER-IMAGE" />
@@ -83,7 +83,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Navbar -->
 
@@ -100,8 +100,8 @@
       <% } else { %>
         <div class="right">
           <a href="#">About</a>
-          <a id="signup" href="#">Signup</a>
-          <a id="signin" href="#">Signin</a>
+          <a id="signup" href="/user/signup">Signup</a>
+          <a id="signin" href="/user/signin">Signin</a>
         </div>
       <% } %>
     </div>
